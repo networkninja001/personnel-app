@@ -60,7 +60,8 @@
     "browserify": "~9.0.3"
   },
   "napa": {
-    "jquery-nestable": "dbushell/Nestable"
+    "jquery-nestable": "dbushell/Nestable",
+    "personnel-theme": "29th/personnel-theme"
   },
   "browserify": {
     "transform": [
