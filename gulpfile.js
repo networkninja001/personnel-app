@@ -2,6 +2,7 @@ var gulp = require("gulp"),
     gutil = require("gulp-util"),
     concat = require("gulp-concat"),
     usemin = require("gulp-usemin"),
+    less = require("gulp-less"),
     minifyCSS = require("gulp-minify-css"),
     del = require("del"),
     processhtml = require("gulp-processhtml"),
@@ -85,11 +86,17 @@ gulp.task("scripts", function() {
         .pipe(gulp.dest(dir.prod + "scripts/"));*/
 });
 
+gulp.task("less", function() {
+    return gulp.src(dir.dev + 'styles/theme.less')
+        .pipe(less())
+        .pipe(gulp.dest(dir.dev + "styles"));
+});
+
 /**
  * Styles
  * Combines all stylesheets then minifies it
  */
-gulp.task("styles", function() {
+gulp.task("styles", ["less"], function() {
     return gulp.src(dir.dev + "*.html")
         .pipe(usemin({
             css: [minifyCSS({keepSpecialComments: 0}), "concat"]

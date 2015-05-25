@@ -57,7 +57,8 @@
     "dotenv": "~0.5.1",
     "gulp-usemin": "~0.3.11",
     "watchify": "~2.4.0",
-    "browserify": "~9.0.3"
+    "browserify": "~9.0.3",
+    "gulp-less": "~3.0.3"
   },
   "napa": {
     "jquery-nestable": "dbushell/Nestable",
